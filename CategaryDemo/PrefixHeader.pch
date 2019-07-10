@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  CategaryDemo
+//
+//  Created by xixi_wen on 2019/7/10.
+//  Copyright © 2019 xixi. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIView+XFrame.h"
+//common
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define iphoneX (kStatusBarHeight > 20.f ? YES : NO)
+
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0
+#define kNavRealBarHeight 64.0
+#define kNavigationBar_HeightForiOS11 (kStatusBarHeight + kNavBarHeight)
+#define IPhoneX_AddHeight ([[UIApplication sharedApplication] statusBarFrame].size.height - 20)
+
+#define kTabBar_Height 69
+#define kTabBar_HeightForiOS11 (iphoneX ? 83 : 49)
+#define IOS_VESION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define kIphoneXBottomHeight (iphoneX ? 34 : 0)
+
+#define XF_randomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
+
+#endif /* PrefixHeader_pch */
